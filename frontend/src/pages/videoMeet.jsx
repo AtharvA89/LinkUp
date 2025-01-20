@@ -402,7 +402,7 @@ export default function VideoMeet() {
   }
 
 
-  // let routeTo=useNavigate();
+  let routeTo=useNavigate();
 
   let connect=()=>{
     setAskForUsername(false);
@@ -450,7 +450,7 @@ export default function VideoMeet() {
     }catch(e){
       console.log(e);
     }
-    window.location.href = "/home"
+    routeTo("/home")
   }
 
   return (
