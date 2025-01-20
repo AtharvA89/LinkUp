@@ -1,0 +1,50 @@
+.FullBox{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/public/bg4.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}
+.navBar{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1.7rem;
+    height: 12vh;
+    color: #bed4ff;
+}
+.navBar > div >h2{
+    font-size: 2.7rem;
+  font-weight: 600;
+  color:#bed4ff;
+}
+.navBar > div >h2>img{
+    height: 4rem;
+  width: 4rem;
+}
+.navBar > div >p{
+    margin: 0px;
+}
+.meetContainer{
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    height: 70vh;
+    gap: 5vw;
+}
+.leftPanel{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* padding-top:15vw; */
+}
+.rightPanel{
+    display: flex;
+    align-items:center;
+}
+.rightPanel > img{
+    height: 50vh;
+}
