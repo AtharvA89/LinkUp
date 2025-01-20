@@ -53,7 +53,7 @@ function LandingPage() {
         <div className="LandingMainContent">
           <h1 style={{ fontSize: "2.7rem" }}>
             <span style={{ color: "#FF9839" }}>Connect</span> with your Loved
-            once
+            ones
           </h1>
           <p
             style={{
