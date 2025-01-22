@@ -14,10 +14,14 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { AuthContext } from "../contexts/AuthContext";
 import { Snackbar } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import HomeIcon from '@mui/icons-material/Home';
 
 // TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
+
 
 export default function Authentication() {
   const [username, setUsername] = React.useState();
@@ -32,6 +36,8 @@ export default function Authentication() {
   const [open,setOpen]=React.useState(false);
 
   const {handleRegister,handleLogin}=React.useContext(AuthContext);
+
+  const routeTo=useNavigate();
 
 
   let handleAuth=async()=>{
@@ -60,6 +66,8 @@ export default function Authentication() {
     <ThemeProvider theme={defaultTheme}>
       <Grid container component="main" sx={{ height: "100vh" }}>
         <CssBaseline />
+        
+
         <Grid
           item
           xs={false}
@@ -77,15 +85,21 @@ export default function Authentication() {
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+        <IconButton onClick={() => {
+                routeTo("/")
+            }}>
+                <HomeIcon style={{fontSize:"20px"}} /><p>home</p>
+            </IconButton >
           <Box
             sx={{
-              my: 8,
+              my: 4,
               mx: 4,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
             }}
           >
+           
             <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
               <LockOutlinedIcon />
             </Avatar>

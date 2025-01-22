@@ -1,3 +1,12 @@
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: scroll;
+  }
+
+
 .FullBox{
     width: 100vw;
     height: 100vh;
@@ -47,4 +56,64 @@
 }
 .rightPanel > img{
     height: 50vh;
+}
+
+
+@media (max-width:780px){
+    .meetContainer{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        flex-shrink: 2;
+        text-align: center;
+        justify-content: center;
+        height: 70vh;
+        gap: 5vw;
+        margin-top: 0;
+    }
+    .leftPanel{
+        height: 35vh;
+        display: flex;
+        align-items: center;
+        /* padding-top:15vw; */
+    }
+    .rightPanel{
+        display: flex;
+        align-items:center;
+        gap: 1000px;
+    }
+    .rightPanel > img{
+        height: 40vh;
+    }
+}
+
+@media (max-width:600px){
+    .navBar{
+        display: flex;
+        align-items: center ;
+        justify-content: space-between;
+        padding: 0 20px;
+        font-size: 1.7rem;
+        height: 12vh;
+        color: #bed4ff;
+    }
+    .navBar > div >h2{
+        display: flex;
+        font-size: 1.9rem;
+      font-weight: 600;
+      color:#bed4ff;
+    }
+    .navBar > div >h2>img{
+        height: 2rem;
+      width: 2rem;
+    }
+    .navBar > div >p{
+        margin: 0px;
+    }
+    .nav-item{
+        font-size: 20px;
+    }
+    .nav2{
+        font-size: smaller !important;
+    }
 }

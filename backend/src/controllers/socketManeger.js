@@ -5,20 +5,18 @@ let messages = {};
 let timeOnline = {};
 
 export const connectToSocket = (server) => {
-  const io = new Server(server,{
-    cors:{
-        origin:"*",
-        methods:["GET","POST"],
-        allowedHeaders:["*"],
-        credentials:true
-    }
+  const io = new Server(server, {
+    cors: {
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["*"],
+      credentials: true,
+    },
   });
 
   io.on("connection", (socket) => {
+    console.log("SOMETHING CONNECTED");
 
-    console.log("SOMETHING CONNECTED")
-
-    
     socket.on("join-call", (path) => {
       if (connections[path] === undefined) {
         connections[path] = [];
@@ -28,13 +26,17 @@ export const connectToSocket = (server) => {
       timeOnline[socket.id] = new Date();
 
       for (let a = 0; a < connections[path].length; a++) {
-        io.to(connections[path][a]).emit("user-joined", socket.id,connections[path]);
+        io.to(connections[path][a]).emit(
+          "user-joined",
+          socket.id,
+          connections[path]
+        );
       }
     });
 
     socket.on("signal", (toId, message) => {
       io.to(toId).emit("signal", socket.id, message);
-  })
+    });
 
     socket.on("chat-message", (data, sender) => {
       const [matchingRoom, found] = Object.entries(connections).reduce(
@@ -65,30 +67,37 @@ export const connectToSocket = (server) => {
       }
     });
 
+    // // socket.on("user-left", (socketId) => {
+    // //   // Broadcast to all other clients that a user has left
+    // //   io.to(socketId).emit("user-left", socketId);
+    // });
+
     socket.on("disconnected", () => {
-        var diffTime=Math.abs(timeOnline[socket.id]-new Date())
+      var diffTime = Math.abs(timeOnline[socket.id] - new Date());
 
-        var key ;
+      var key;
 
-        for(const[k,v] of JSON.parse(JSON.stringify(Object.entries(connections)))){
-            for(let a=0;a<v.length;a++){
-                if(v[a]===socket.id){
-                    key=k
+      for (const [k, v] of JSON.parse(
+        JSON.stringify(Object.entries(connections))
+      )) {
+        for (let a = 0; a < v.length; a++) {
+          if (v[a] === socket.id) {
+            key = k;
 
-                    for(let a=0; a<connections[key].length;a++){
-                        io.to(connections[key][a]).emit('user-left',socket.id)
-                    }
-
-                    var index=connections[key].indexOf(socket.id)
-
-                    connections[key].splice(index,1)
-                    
-                    if(connections[key].length===0){
-                        delete connections[key];
-                    }
-                }
+            for (let a = 0; a < connections[key].length; a++) {
+              io.to(connections[key][a]).emit("user-left", socket.id);
             }
+
+            var index = connections[key].indexOf(socket.id);
+
+            connections[key].splice(index, 1);
+
+            if (connections[key].length === 0) {
+              delete connections[key];
+            }
+          }
         }
+      }
     });
   });
 

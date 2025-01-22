@@ -1,13 +1,21 @@
-.LandingPageContainer{
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: scroll;
+  
+}
+.LandingPageContainer {
   width: 100vw;
   height: 100vh;
-  background-image: url('/public/bg4.jpeg');
+  background-image: url("/public/bg4.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   color: rgb(255, 255, 255);
 }
 
-.LandingPageContainer nav{
+.LandingPageContainer nav {
   padding-inline: 1.2rem;
   /* padding-block: 1.6rem; */
   display: flex;
@@ -15,38 +23,45 @@
   align-items: center;
 }
 
-
-.LandingPageContainer nav h2{
-  font-size: 2.7rem;
+.LandingPageContainer nav h2 {
+  font-size: 2.1rem;
   font-weight: 600;
-  color:#bed4ff;
+  color: #bed4ff;
 }
-.LandingPageContainer nav img{
+.LandingPageContainer nav img {
   height: 4rem;
   width: 4rem;
 }
 
-.LandingPageContainer nav .navList{
+.LandingPageContainer nav .navList {
   display: flex;
-  gap:  1.6rem;
+  gap: 1.6rem;
   font-weight: 400;
-  font-size: 1.8rem;
-  color:#bed4ff;
+  font-size: 1.5rem;
+  color: #bed4ff;
   cursor: pointer;
-
 }
 
-.LandingMainContainer{
+.LandingMainContainer {
   display: flex;
   justify-content: space-evenly;
   padding-inline: 3rem;
   height: 70vh;
-   align-items: center;
-   width: auto;
+  align-items: center;
+  max-width: 100vw;
+  overflow: hidden;
 }
-.LandingMainImage img{
+.LandingMainImage img {
   height: 70vh;
   width: auto;
+}
+
+.LandingMainContent h1{
+  font-size: 2.7rem;
+}
+.LandingMainContent p{
+  opacity:0.7;
+  margin-bottom: 1.9rem;
 }
 
 .GetStartedButton {
@@ -58,14 +73,19 @@
   border-radius: 20px;
   font-size: 1.3rem;
   margin-top: 1.4rem;
-  text-align:center;
+  text-align: center;
 }
 .cardBody {
   /* background-color: black !important; */
   margin-right: 12rem;
   color: white;
 }
-.bothbuttons{
+.card{
+  min-width: 273px;
+  opacity: 0.7;
+  border-radius: 30px;
+}
+.bothbuttons {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -76,3 +96,167 @@
   background-color: black;
   opacity: 0.6;
 }
+
+@media screen and (max-width: 700px) {
+ 
+
+  /* nav */
+
+  .LandingPageContainer nav {
+    padding-inline: 1.2rem;
+    /* padding-block: 1.6rem; */
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .LandingPageContainer nav h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #bed4ff;
+  }
+  .LandingPageContainer nav img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .LandingPageContainer nav .navList {
+    display: flex;
+    gap: 1.6rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #bed4ff;
+    cursor: pointer;
+    bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  /* landing page container */
+  .LandingPageContainer {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/public/bg4.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+  }
+  .LandingMainContainer {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    height: auto;
+    margin-top: 4vh;
+  }
+  .LandingMainImage img {
+    max-width: 60vw;
+    height: 30vh;
+    flex-shrink: 1;
+  }
+  .LandingMainContent h1{
+    font-size: 0.8rem;
+    margin-top: 40px;
+  }
+  .LandingMainContent p{
+    opacity:0.7;
+    margin-bottom: 1.9rem;
+    font-size: 0.7rem;
+  }
+  .GetStartedButton {
+    color: white;
+    text-decoration: none;
+    background-color: #54504c;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-top: 1.4rem;
+    text-align: center;
+  }
+  
+}
+@media (max-width: 1200px) {
+
+
+  /* nav */
+
+
+  .LandingPageContainer nav {
+    padding-inline: 1.2rem;
+    /* padding-block: 1.6rem; */
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .LandingPageContainer nav h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #bed4ff;
+  }
+  .LandingPageContainer nav img {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .LandingPageContainer nav .navList {
+    display: flex;
+    gap: 1.6rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #bed4ff;
+    cursor: pointer;
+    bottom: 0;
+    flex-wrap: wrap;
+  }
+
+  /* landing page container */
+
+  /* .LandingPageContainer {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/public/bg4.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+  } */
+  /* .LandingMainContainer {
+    display: flex;
+    /* flex-direction: column; Stack content vertically */
+    /* justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    height: auto;
+    margin-top: 4vh;
+  }  */
+  .LandingMainImage img {
+    max-width: 60vw;
+    height: 35vh;
+    /* flex-shrink: 1; */
+  }
+  .LandingMainContent h1{
+    font-size: 1.5rem;
+    margin-top: 40px;
+  }
+  .LandingMainContent p{
+    opacity:0.7;
+    margin-bottom: 1.9rem;
+    font-size: 1rem;
+  }
+  .cardBody{
+  margin-right: 0;
+  }
+ 
+}
+

@@ -51,7 +51,7 @@ export default function History() {
             <IconButton onClick={() => {
                 routeTo("/home")
             }}>
-                <HomeIcon />
+                <HomeIcon style={{fontSize:"40px"}} /><p>home</p>
             </IconButton >
             {
                 

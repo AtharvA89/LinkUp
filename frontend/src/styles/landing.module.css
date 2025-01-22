@@ -1,0 +1,38 @@
+
+.CardContentText{
+    margin-bottom: 20px !important;
+    font-size: 18px;
+}
+.CardContentLogo{
+    font-size: 15px !important;
+}
+
+
+@media screen and (max-width: 1024px){
+
+    .cardContent1{
+        font-size: 100px;
+        margin-bottom: 10px;
+    }
+   
+    }
+
+    .cardContent1{
+        font-size: 18px !important; 
+        margin-bottom: 10px !important;
+    }
+
+    .CardContentText{
+        font-size: 13px !important;
+    }
+    .CardContentLogo{
+        font-size:13px !important;
+    }
+    .bothbuttons {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: -30px;
+        padding-top: 0;
+      }
+     

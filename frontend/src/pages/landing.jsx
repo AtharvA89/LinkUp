@@ -7,9 +7,13 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import styles from "../styles/landing.module.css";
+import { useMediaQuery } from "@mui/material";
+
 
 function LandingPage() {
   const routTo = useNavigate();
+  const isMobile = useMediaQuery("(max-width:500px)");
   return (
     <div className="LandingPageContainer">
       <nav>
@@ -27,13 +31,14 @@ function LandingPage() {
           >
             Join as guest
           </p>
-          <p
+          {isMobile ? null :<p
+          className="hide-in-mobile"
             onClick={() => {
               routTo("/auth");
             }}
           >
             Register
-          </p>
+          </p>}
           <div role="button">
             <p
               onClick={() => {
@@ -51,26 +56,20 @@ function LandingPage() {
           <img src="/mobileak.webp" alt="img" />
         </div>
         <div className="LandingMainContent">
-          <h1 style={{ fontSize: "2.7rem" }}>
+          <h1 >
             <span style={{ color: "#FF9839" }}>Connect</span> with your Loved
             ones
           </h1>
-          <p
-            style={{
-              opacity: "0.7",
-              marginBottom: "1.9rem",
-              fontSize: "1.4rem",
-            }}
-          >
+          <p>
             cover a distance by LinkUp
           </p>
           {/*  */}
           <div className="cardBody">
-            <Card sx={{ minWidth: 275, opacity: "0.7", borderRadius: "20px" }}>
-              <CardContent>
-                <Typography sx={{ fontSize: 25, mb: 2 }}>LinkUp</Typography>
-                <Typography sx={{ mb: 4 }}>
-                  <LocalPhoneIcon style={{ fontSize: "18px" }} />
+            <Card className="card" sx={{  borderRadius: "20px" }}>
+              <CardContent className="cardContent" >
+                <Typography className={styles.cardContent1} >LinkUp</Typography>
+                <Typography className={styles.CardContentText} >
+                  <LocalPhoneIcon className={styles.CardContentLogo}/>
                   &nbsp;Incoming call
                 </Typography>
                 <div className="bothbuttons">

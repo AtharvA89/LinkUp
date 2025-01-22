@@ -10,6 +10,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { Link } from "react-router-dom";
+import styles from "../styles/home.module.css";
 
 function HomeComponent() {
   let navigate = useNavigate();
@@ -29,13 +30,13 @@ function HomeComponent() {
             LinkUp
           </h2>
         </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div className="nav2" style={{ display: "flex", alignItems: "center" }}>
           <IconButton
             style={{ color: "#bed4ff" }}
             onClick={() => navigate("/history")}
           >
             <RestoreIcon />
-            <p>History</p>
+            <p className="nav-item" >History</p>
           </IconButton>&nbsp;&nbsp;&nbsp;
           <Button
             style={{ fontSize: "1.4rem" }}
@@ -44,7 +45,7 @@ function HomeComponent() {
               navigate("/");
             }}
           >
-            Logout
+           <p className={styles.Logout}>Logout</p>
           </Button>
         </div>
       </div>
