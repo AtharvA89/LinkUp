@@ -493,17 +493,10 @@ export default function VideoMeet() {
     setMessage("");
   };
 
-  let handleEndCall = (socketId) => {
+  let handleEndCall = () => {
     try {
-      const videoToEnd = videos.find((video) => video.socketId === socketId);
-
-      if (videoToEnd && videoToEnd.stream) {
-        // Stop all media tracks in the stream
-        videoToEnd.stream.getTracks().forEach((track) => track.stop());
-      }
-      setVideos((prevVideos) =>
-        prevVideos.filter((video) => video.socketId !== socketId)
-      );
+      let tracks = localVideoRef.current.srcObject.getTracks()
+      tracks.forEach(track => track.stop())
     } catch (e) {
       console.log(e);
     }

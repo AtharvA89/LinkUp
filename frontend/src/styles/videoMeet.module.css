@@ -79,12 +79,20 @@ body{
     height: 86vh;
     flex-wrap: wrap;
     padding: 10px;
+    margin: 0;
+    align-content: flex-start;
     gap: 10px;
     overflow-y: scroll;
 
 }
+.conferenceView > div{
+    height: 30%;
+
+
+}
 .conferenceView > div > video{
-    height: auto;
+    height: 40;
+    background-color: black;
     width: 25vw;
     min-width: 25vw;
     border-radius: 40px;
@@ -162,12 +170,13 @@ body{
     .conferenceView{
         display: flex;
         flex-wrap: wrap;
-        padding: 10px;
+        /* padding: 10px; */
         gap: 10px;
     
-    }
+    } 
     .conferenceView > div > video{
-        height: auto;
+        height: 40;
+        background-color: black;
         width: 30vw;
         min-width: 37vw;
         /* border: 20px solid black; */
@@ -184,12 +193,14 @@ body{
         flex-wrap: wrap;
         padding: 10px;
         gap: 10px;
+        align-content: normal;
         overflow: scroll;
         /* overflow:hidden; */
     
     }
     .conferenceView > div > video{
-        height: auto;
+        height: 40;
+    background-color: black;
         width: 45vw;
         min-width: 45vw;
         /* border: 20px solid black; */
